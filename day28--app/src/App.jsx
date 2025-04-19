@@ -29,6 +29,9 @@ function App() {
     };
 
     setTotalProduct([...totalProduct, newProduct]);
+    setName("");
+    setPrice("");
+    setDesc("");
   };
 
   return (
@@ -46,18 +49,21 @@ function App() {
           style={{ display: "block", margin: "20px auto" }}
           type="text"
           placeholder="Masukkan Nama Produk"
+          value={name}
           onChange={setNama}
         ></input>
         <input
           style={{ display: "block", margin: "20px auto" }}
           type="number"
           placeholder="Masukkan Harga Produk"
+          value={price === 0 ? "" : price}
           onChange={setHarga}
         ></input>
         <input
           style={{ display: "block", margin: "20px  auto" }}
           type="text"
           placeholder="Masukkan Deskripsi Produk"
+          value={desc}
           onChange={setDeskripsi}
         ></input>
         <button onClick={setProduct}>Tambah Produk</button>
